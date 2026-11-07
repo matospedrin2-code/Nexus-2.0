@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    --background: #030712;
+    --foreground: #e2e8f0;
+    --card: #050d1c;
+    --card-foreground: #e2e8f0;
+    --popover: #050d1c;
+    --popover-foreground: #e2e8f0;
+    --primary: #00f0ff;
+    --primary-foreground: #030712;
+    --secondary: #0f172a;
+    --secondary-foreground: #e2e8f0;
+    --muted: #0f172a;
+    --muted-foreground: #94a3b8;
+    --accent: #0f172a;
+    --accent-foreground: #00f0ff;
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+    --border: rgba(0, 240, 255, 0.2);
+    --input: rgba(0, 240, 255, 0.25);
+    --ring: #00f0ff;
+    --radius: 0.5rem;
+  }
+}
+
+.hud-grid-bg {
+  background-image: repeating-linear-gradient(0deg, rgba(0, 240, 255, 0.03) 0px, transparent 1px, transparent 32px),
+    repeating-linear-gradient(90deg, rgba(0, 240, 255, 0.03) 0px, transparent 1px, transparent 32px);
+}
+
+.hud-scanlines {
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.28) 50%);
+  background-size: 100% 4px;
+}
+
+.hud-glow {
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
+}
+
+.hud-brackets {
+  position: relative;
+}
+
+.hud-brackets::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-top: 2px solid rgba(56, 189, 248, 0.85);
+  border-left: 2px solid rgba(56, 189, 248, 0.85);
+  pointer-events: none;
+}
+
+.hud-brackets::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-bottom: 2px solid rgba(56, 189, 248, 0.85);
+  border-right: 2px solid rgba(56, 189, 248, 0.85);
+  pointer-events: none;
+}
+
+@keyframes nexus-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes nexus-scan {
+  0% {
+    top: -12%;
+  }
+  100% {
+    top: 112%;
+  }
+}
+
+@keyframes nexus-radar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nexus-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.95;
+  }
+  80% {
+    opacity: 0.6;
+  }
+}
+
+/* Efeito Liquid Glass (Vidro Líquido Translúcido com bordas suaves e brilho fosco) */
+.liquid-glass {
+  background-color: rgba(30, 30, 45, 0.75);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 16px rgba(255, 255, 255, 0.05);
+}
+

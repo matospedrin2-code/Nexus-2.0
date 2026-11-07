@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "name": "NEXUS — Sistema Executivo Holográfico",
+  "short_name": "NEXUS",
+  "description": "NEXUS — Neural Executive System for Universal Support: assistente executivo holográfico com briefing matinal, verificação facial e inteligência adaptativa.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#030712",
+  "background_color": "#030712",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030712" />
+    <title>NEXUS — Sistema Executivo Holográfico</title>
+    <meta name="description" content="NEXUS — Neural Executive System for Universal Support: assistente executivo holográfico com briefing matinal, verificação facial e inteligência adaptativa." />
+    <meta property="og:title" content="NEXUS — Sistema Executivo Holográfico" />
+    <meta property="og:description" content="NEXUS — Neural Executive System for Universal Support: assistente executivo holográfico com briefing matinal, verificação facial e inteligência adaptativa." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="NEXUS" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#030712] text-slate-200 antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        if (window.self !== window.top) {
+          // Dentro do iframe / preview da plataforma, remove qualquer service worker para evitar erros de sandbox
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            for (var r of regs) r.unregister();
+          }).catch(function() {});
+        } else {
+          // Em tela cheia ou no celular, registra de forma segura para permitir a instalação como app PWA
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').catch(function() {});
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
+
